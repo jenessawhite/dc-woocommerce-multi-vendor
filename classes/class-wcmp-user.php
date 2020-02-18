@@ -747,10 +747,11 @@ class WCMp_User {
         if (isset($_POST['pending_vendor']) && ($_POST['pending_vendor'] == 'true') && !is_user_wcmp_vendor($user_id)) {
             if ($is_approve_manually) {
                 $user = new WP_User(absint($user_id));
-                $user->set_role('dc_pending_vendor');
+                $user->add_role('dc_pending_vendor');
             } else {
                 $user = new WP_User(absint($user_id));
-                $user->set_role('dc_vendor');
+                $user->remove_role('dc_pending_vendor');
+                $user->add_role('dc_vendor');
             }
             do_action('after_register_wcmp_vendor', $user_id);
         }

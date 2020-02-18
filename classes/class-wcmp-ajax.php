@@ -1449,7 +1449,8 @@ class WCMp_Ajax {
 
         if ($user_id) {
             $user = new WP_User(absint($user_id));
-            $user->set_role('dc_vendor');
+            $user->remove_role('dc_pending_vendor');
+            $user->add_role('dc_vendor');
             $user_dtl = get_userdata(absint($user_id));
             $email = WC()->mailer()->emails['WC_Email_Approved_New_Vendor_Account'];
             $email->trigger($user_id, $user_dtl->user_pass);
@@ -1481,7 +1482,8 @@ class WCMp_Ajax {
 
         if ($user_id) {
             $user = new WP_User(absint($user_id));
-            $user->set_role('dc_rejected_vendor');
+            $user->remove_role('dc_pending_vendor');
+            $user->add_role('dc_rejected_vendor');
 
             if (isset($custom_note) && $custom_note != '') {
                 $wcmp_vendor_rejection_notes = unserialize(get_user_meta($user_id, 'wcmp_vendor_rejection_notes', true));
