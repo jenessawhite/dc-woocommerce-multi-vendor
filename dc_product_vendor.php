@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: WC Marketplace
- * Plugin URI: https://wc-marketplace.com/
- * Description: A Free Extension That Transforms Your WooCommerce Site into a Marketplace.
- * Author: WC Marketplace, The Grey Parrots
+ * Plugin Name: WC Marketplace (Mina)
+ * Plugin URI: https://github.com/jenessawhite/dc-woocommerce-multi-vendor
+ * Description: This is a fork of the WCMp for Mina Families.
+ * Author: Mina Families
  * Version: 3.4.9
- * Author URI: https://wc-marketplace.com/
+ * Author URI: https://minafamilies.com/
  * Requires at least: 4.4
  * Tested up to: 5.3.2
  * WC requires at least: 3.0
